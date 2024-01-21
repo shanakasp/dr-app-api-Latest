@@ -84,12 +84,12 @@ export const findCategoryById = async (req, res) => {
 };
 
 export const UpdateCategoryById = async (req, res) => {
-  const { category_name, imageUrl } = req.body;
-  if (!category_name || !imageUrl) {
+  const { category_name } = req.body;
+  if (!category_name) {
     //checking the request  body
     return res.status(403).json({
       response_code: 403,
-      message: "Please enter all inputs",
+      message: "Please enter Category Name",
     });
   } else {
     try {
