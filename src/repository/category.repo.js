@@ -73,6 +73,7 @@ export const UpdateCategoryById = async (id, request) => {
     const result = await Category.update(
       {
         category_name: request.category_name,
+        image_url: request.image_url,
       },
       {
         where: {
