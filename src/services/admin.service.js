@@ -1,5 +1,5 @@
-import adminRepo from "../repository/admin.repo.js";
 import bcrypt from "bcrypt";
+import adminRepo from "../repository/admin.repo.js";
 
 const adminService = {
   changeSuperAdminPassword: async (superAdminId, oldPassword, newPassword) => {
@@ -9,7 +9,7 @@ const adminService = {
       if (!superAdmin[0]) {
         return {
           status: false,
-          message: "Super admin not found!",
+          message: "User name invalid!",
         };
       }
       // checking current password
@@ -51,7 +51,7 @@ const adminService = {
       if (!superAdmin[0]) {
         return {
           status: false,
-          message: "Super admin not found!",
+          message: "User name invalid!",
         };
       }
       // checking password

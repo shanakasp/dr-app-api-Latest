@@ -1,11 +1,11 @@
-import express from "express";
-import cors from "cors";
 import bodyParser from "body-parser";
+import cors from "cors";
+import express from "express";
 import sequelize from "./config/db.connection.js";
 import adminRoutes from "./src/routes/admin.route.js";
 import categoryRoute from "./src/routes/category.route.js";
+import diseaseRoute from "./src/routes/disease.route.js";
 import questionRoute from "./src/routes/question.route.js";
-import diseaseRoute from "./src/routes/disease.route.js"
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -45,7 +45,7 @@ sequelize
 
 //Table creation
 sequelize
-  .sync({force: false})
+  .sync({ force: false })
   .then(() => {
     console.log("tables created");
   })
